@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="img">
+    <file>background.jpg</file>
+    <file>subbackground.jpg</file>
     <file>evilTwinAtk.png</file>
     <file>logo.jpg</file>
   </qresource>

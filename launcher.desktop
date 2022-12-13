@@ -1,0 +1,6 @@
+[Desktop Entry]
+Version=1.0
+Name=Evil Twin Detect
+Exec=/home/kali/Desktop/EvilTwinDetectFYP/detectETA.py
+Icon=/home/kali/Desktop/EvilTwinDetectFYP/img/logo.jpg
+Type=Application
