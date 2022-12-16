@@ -130,6 +130,7 @@ class App(QMainWindow):
         if self.deauthAddr in self.sameSSIDMacAddr:
             messagebox.showwarning("Warning", "WiFi MAC address '" + self.deauthAddr + "' existence deauthentication attack, meaning that " + 
             "the legal AP has been attack. If Currenly connecting in " + self.wifi_name + ", Now will disconnect your Wi-Fi to protect your personal imformation")
+            os.system("ifconfig eth0 down")
         else:
             messagebox.showinfo("Remind", "No nearby Wi-Fi with the same name, Your Are not under Evil Twin Attack")
 
@@ -239,6 +240,7 @@ class App(QMainWindow):
             sniff(iface="wlan0", monitor = True,prn = findSignal,timeout=40)
             #print(self.tempPktaddr)
             sniff(iface="wlan0", monitor = True,filter="not type mgt and not type ctl",stop_filter=PacketHandler,timeout=360)
+            os.system("sudo service NetworkManager start")
 
             #Cooperate with sniff timeout=360 to avoid array nor diferrent, remove all the array didn't hit the target package data rate
             findMacValue(AP1Ux)
@@ -288,6 +290,7 @@ class App(QMainWindow):
                     messagebox.showwarning("Warning", "WiFi MAC address " + list(finalResult.keys())[0] + 
                 " probability that it could be a Evil Twin Attack is '"+round(list(finalResult.values())[0]*100,2)+"%'." + 
                 "Now will disconnect your Wi-Fi to protect your personal imformation")
+                    os.system("ifconfig eth0 down")
                 else:
                     self.detectDeauth()
             else:
