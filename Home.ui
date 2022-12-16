@@ -77,15 +77,18 @@ background-repeat: no-repeat
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
-       <string notr="true">
-color:white</string>
+       <string notr="true">color:white;
+font-weight:600;
+font-size:12pt;</string>
       </property>
       <property name="text">
        <string>Home</string>
@@ -134,14 +137,18 @@ color:white</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>10</pointsize>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="cursor">
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:white</string>
+       <string notr="true">color:white;
+font-weight:600;
+font-size:12pt;</string>
       </property>
       <property name="text">
        <string>Contact Us</string>

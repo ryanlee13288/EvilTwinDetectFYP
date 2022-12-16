@@ -129,7 +129,7 @@ class App(QMainWindow):
 
         if self.deauthAddr in self.sameSSIDMacAddr:
             messagebox.showwarning("Warning", "WiFi MAC address '" + self.deauthAddr + "' existence deauthentication attack, meaning that " + 
-            "the legal AP has been attack. If Currenly connecting in " + self.wifi_name + ", please immediately disconnect your Wi-Fi to protect your personal imformation")
+            "the legal AP has been attack. If Currenly connecting in " + self.wifi_name + ", Now will disconnect your Wi-Fi to protect your personal imformation")
         else:
             messagebox.showinfo("Remind", "No nearby Wi-Fi with the same name, Your Are not under Evil Twin Attack")
 
@@ -286,8 +286,8 @@ class App(QMainWindow):
                 # if less then 0.4 will detect the Deauth to confirm is that have someone use Deauth attack to attack the legal AP
                 if list(finalResult.values())[0] > 0.4:
                     messagebox.showwarning("Warning", "WiFi MAC address " + list(finalResult.keys())[0] + 
-                    " probability that it could be a Evil Twin Attack is '"+round(list(finalResult.values())[0]*100,2)+"%'. If Currenly connecting in " +
-                    self.wifi_name + ", please immediately disconnect your Wi-Fi to protect your personal imformation")
+                " probability that it could be a Evil Twin Attack is '"+round(list(finalResult.values())[0]*100,2)+"%'." + 
+                "Now will disconnect your Wi-Fi to protect your personal imformation")
                 else:
                     self.detectDeauth()
             else:
