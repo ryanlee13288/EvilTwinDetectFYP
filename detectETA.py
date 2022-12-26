@@ -276,16 +276,22 @@ class App(QMainWindow):
             if len(finalPearsonrAP1) > 1 and len(finalPearsonrAP2) > 1:
                 fValueAP1,fValueAP2 = {},{}
 
-                for key, value in finalPearsonrAP1:
-                    if value > fValueAP1:
+                for key, value in finalPearsonrAP1.items():
+                    if len(fValueAP1.values()) == 0:
+                        fValueAP1[key] = value
+                    elif value > list(fValueAP1.values())[0]:
+                        del fValueAP1[key]
                         fValueAP1[key] = value
 
-                for key, value in finalPearsonrAP2:
-                    if value > fValueAP2:
+                for key, value in finalPearsonrAP2.items():
+                    if len(fValueAP2.values()) == 0:
+                        fValueAP2[key] = value
+                    elif value > list(fValueAP2.values())[0]:
+                        del fValueAP2[key]
                         fValueAP2[key] = value
 
                 
-                if fValueAP1 > fValueAP2:
+                if list(fValueAP1.values())[0] > list(fValueAP2.values())[0]:
                     finalResult = fValueAP1
                 else:
                     finalResult = fValueAP2
